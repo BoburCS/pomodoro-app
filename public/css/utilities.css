@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    line-height: normal;
+}
+
+:root {
+    --primary-clr: #0d9488;
+}
+
+/* Text Classes */
+.fs-1 {
+    color: var(--primary-clr);
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.fs-2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.fs-3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Components */
+button {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--primary-clr);
+    cursor: pointer;
+}
+
+
+/* Display */
+.fc {
+    display: flex;
+    align-items: center;
+}
