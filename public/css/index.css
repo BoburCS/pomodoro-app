@@ -25,6 +25,14 @@ body {
     position: relative;
 }
 
+.timer-container > h2 {
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+}
+
 .timer-shower {
     width: 200px;
     height: 200px;

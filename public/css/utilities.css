@@ -9,13 +9,12 @@
 }
 
 :root {
-    --primary-clr: #0d9488;
-    --primary-clr-hvr: #134e4a;
+    --primary-clr: #0f766e;
+    --primary-clr-hvr: #2dd4bf;
 }
 
 /* Text Classes */
-h1, h2, h3, h4, h5, h6,
-p,
+h1, h2,
 span {
     color: var(--primary-clr);
 }
@@ -54,6 +53,7 @@ button {
 
 button:hover {
     background-color: var(--primary-clr-hvr);
+    transform: scale(1.1);
 }
 
 
