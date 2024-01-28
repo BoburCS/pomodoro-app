@@ -5,15 +5,22 @@
     font-family: "Poppins", sans-serif;
     font-style: normal;
     line-height: normal;
+    transition: .4s;
 }
 
 :root {
     --primary-clr: #0d9488;
+    --primary-clr-hvr: #134e4a;
 }
 
 /* Text Classes */
-.fs-1 {
+h1, h2, h3, h4, h5, h6,
+p,
+span {
     color: var(--primary-clr);
+}
+
+.fs-1 {
     font-size: 36px;
     font-weight: 900;
 }
@@ -28,6 +35,11 @@
     font-weight: 500;
 }
 
+.fs-timer {
+    font-size: 90px;
+    font-weight: 700;
+}
+
 /* Components */
 button {
     font-size: 20px;
@@ -38,6 +50,10 @@ button {
     outline: none;
     background-color: var(--primary-clr);
     cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-clr-hvr);
 }
 
 
