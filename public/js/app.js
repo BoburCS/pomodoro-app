@@ -8,6 +8,7 @@ let timer;
 let minutes = 25;
 let seconds = 0;
 let isRunning = false;
+let audio = new Audio("../../src/assets/audio/audio-mouse-click.mp3");
 
 // TimerCountDown Function
 function timerCountDown () 
@@ -25,6 +26,7 @@ function timerCountDown ()
 // Toggle Timer Function
 function toggleTimer ()
 {
+    audio.play();
     if (isRunning)
     {
         clearInterval(timer);
@@ -42,6 +44,7 @@ function toggleTimer ()
 // Type Time Function
 function setTime (mins, typeofbreak)
 {
+    audio.play();
     minutes = mins;
     seconds = 0;
     minDisplay.textContent = String(minutes).padStart(2, "0");
