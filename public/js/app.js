@@ -5,7 +5,7 @@ const qsAll = tag => document.querySelectorAll(tag);
 const getID = tag => document.getElementById(tag);
 
 let timer;
-let minutes;
+let minutes = 25;
 let seconds = 0;
 let isRunning = false;
 
@@ -40,25 +40,27 @@ function toggleTimer ()
 }
 
 // Type Time Function
-function setTime (mins)
+function setTime (mins, typeofbreak)
 {
     minutes = mins;
     seconds = 0;
     minDisplay.textContent = String(minutes).padStart(2, "0");
     secDisplay.textContent = String(seconds).padStart(2, "0");
+    typeofbreakDisplay.textContent = typeofbreak;
 }
 
 window.addEventListener("DOMContentLoaded", function() 
 {
     const minDisplay = getID("minDisplay");
     const secDisplay = getID("secDisplay");
+    const typeofbreakDisplay = getID("typeofbreakDisplay");
     const btnToggle = getID("btnToggle");
     const btnShortBreak = getID("btnShortBreak");
     const btnPomodoro = getID("btnPomodoro");
     const btnLongBreak = getID("btnLongBreak");
 
     btnToggle.addEventListener("click", toggleTimer);
-    btnShortBreak.addEventListener("click", () => setTime(5)); 
-    btnPomodoro.addEventListener("click", () => setTime(25)); 
-    btnLongBreak.addEventListener("click", () => setTime(15)); 
+    btnShortBreak.addEventListener("click", () => setTime(5, "Short Break")); 
+    btnPomodoro.addEventListener("click", () => setTime(25, "Pomodoro")); 
+    btnLongBreak.addEventListener("click", () => setTime(15, "Long Break")); 
 });
