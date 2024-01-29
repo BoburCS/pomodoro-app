@@ -18,7 +18,7 @@
 
     <nav class="navbar fc">
         <h1 class="fs-1">POMODORO</h1>
-        <button>Reset</button>
+        <button>Settings</button>
     </nav>
 
     <div class="main-container fc">
@@ -38,6 +38,26 @@
         <button id="btnPomodoro">Pomodoro</button>
         <button id="btnLongBreak">Long Break</button>
     </footer>
+
+    <!-- Settings -->
+    <div class="setting-container">
+        <div class="setting-cards fc">
+            <label class="fs-2" for="inputShortBreak">Short Break</label>
+            <input id="inputShortBreak" type="number">
+        </div>
+        <div class="setting-cards fc">
+            <label class="fs-2" for="inputPomodoro">Pomodoro</label>
+            <input id="inputPomodoro" type="number">
+        </div>
+        <div class="setting-cards fc">
+            <label class="fs-2" for="inputLongBreak">Long Break</label>
+            <input id="inputLongBreak" type="number">
+        </div>
+        <div class="btn-container fc">
+            <button id="btnSave">Save</button>
+            <button id="btnClose">Close</button>
+        </div>
+    </div>
 
     <script src="./public/js/app.js"></script>
 

@@ -11,11 +11,15 @@
 :root {
     --primary-clr: #0f766e;
     --primary-clr-hvr: #2dd4bf;
+    --void: #000000;
+    --dark: #09090b;
 }
 
 /* Text Classes */
 h1, h2,
-span {
+span, 
+label, 
+input {
     color: var(--primary-clr);
 }
 
@@ -29,24 +33,22 @@ span {
     font-weight: 700;
 }
 
-.fs-3 {
-    font-size: 15px;
-    font-weight: 500;
-}
-
 .fs-timer {
     font-size: 90px;
     font-weight: 700;
 }
 
 /* Components */
-button {
-    font-size: 20px;
-    font-weight: 700;
+button, input {
     padding: 8px 18px;
     border: none;
     border-radius: 8px;
     outline: none;
+}
+
+button {
+    font-size: 20px;
+    font-weight: 700;
     background-color: var(--primary-clr);
     cursor: pointer;
 }
@@ -56,6 +58,14 @@ button:hover {
     transform: scale(1.1);
 }
 
+input {
+    background-color: var(--void);
+}
+
+input:hover {
+    font-size: 16px;
+    transform: scale(1.2);
+}
 
 /* Display */
 .fc {
