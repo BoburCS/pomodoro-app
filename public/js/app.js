@@ -18,6 +18,12 @@ let audio = new Audio("../../src/assets/audio/audio-mouse-click.mp3");
 // TimerCountDown Function
 function timerCountDown () 
 {
+    if (minutes === 0 && seconds === 0)
+    {
+        clearInterval(timer);
+        alert("The Time is UP!");
+        return;
+    }
     if (seconds === 0) 
     {
         seconds = 60;
@@ -57,29 +63,48 @@ function setTime (mins, typeofbreak)
     typeofbreakDisplay.textContent = typeofbreak;
 }
 
+// Setting timers according to type of timer or break
+function setShortBreakTime() 
+{
+    setTime(shortBreakValue, "Short Break");
+}
+
+function setPomodoroTime() 
+{
+    setTime(pomodoroValue, "Pomodoro");
+}
+
+function setLongBreakTime() 
+{
+    setTime(longBreakValue, "Long Break");
+}
+
 window.addEventListener("DOMContentLoaded", function() 
 {
+    // CountDown Elements and Events
     const minDisplay = getID("minDisplay");
     const secDisplay = getID("secDisplay");
     const typeofbreakDisplay = getID("typeofbreakDisplay");
-    const btnToggle = getID("btnToggle");
 
-    // Buttons for Changing type of timer
+    // Start or Stop CountDown
+    const btnToggle = getID("btnToggle");
+    btnToggle.addEventListener("click", toggleTimer);
+
+    // Type of Timer
     const btnShortBreak = getID("btnShortBreak");
     const btnPomodoro = getID("btnPomodoro");
     const btnLongBreak = getID("btnLongBreak");
 
-    btnToggle.addEventListener("click", toggleTimer);
-    btnShortBreak.addEventListener("click", () => setTime(shortBreakValue, "Short Break")); 
-    btnPomodoro.addEventListener("click", () => setTime(pomodoroValue, "Pomodoro")); 
-    btnLongBreak.addEventListener("click", () => setTime(longBreakValue, "Long Break")); 
+    btnShortBreak.addEventListener("click", setShortBreakTime); 
+    btnPomodoro.addEventListener("click", setPomodoroTime); 
+    btnLongBreak.addEventListener("click", setLongBreakTime); 
 
-    // Settings Elements
+    // CountDown Elements and Events according to Settings 
     const inputShortBreak = getID("inputShortBreak");
     const inputPomodoro = getID("inputPomodoro");
     const inputLongBreak = getID("inputLongBreak");
-    const btnSetting = qs(".navbar button");
     const settingContainer = qs(".setting-container");
+    const btnSetting = qs(".navbar button");
     const btnClose = getID("btnClose");
     const btnSave = getID("btnSave");
 
@@ -92,14 +117,8 @@ window.addEventListener("DOMContentLoaded", function()
         pomodoroValue = Number(inputPomodoro.value) || pomodoroValue;
         longBreakValue = Number(inputLongBreak.value) || longBreakValue;
 
-        btnShortBreak.removeEventListener("click");
-        btnShortBreak.addEventListener("click", () => setTime(shortBreakValue, "Short Break")); 
-
-        btnPomodoro.removeEventListener("click");
-        btnPomodoro.addEventListener("click", () => setTime(pomodoroValue, "Pomodoro")); 
-
-        btnLongBreak.removeEventListener("click");
-        btnLongBreak.addEventListener("click", () => setTime(longBreakValue, "Long Break"));
+        btnShortBreak.addEventListener("click", setShortBreakTime);
+        btnPomodoro.addEventListener("click", setPomodoroTime);
+        btnLongBreak.addEventListener("click", setLongBreakTime);
     });
-
 });
